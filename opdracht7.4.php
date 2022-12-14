@@ -1,18 +1,18 @@
 <form method="post">
-<p> Bedrag exclusief korting
-<input type="text" name="bedrag" value="100"></p>
-<input type="radio" name="BTW" value="negen">10 % korting
-<p><input type="submit" name="omzetten" value="Omzetten"></p>
+<p> Prijs <input type="text" name="bedrag" value=""></p>
+<p> Korting <input type="text" name="korting" value="10"> </p>
+<input type="submit" name="berekenen" value="click">
 </form>
 
 <?php
-if(isset($_POST['korting'])){
+if (isset ($_POST['korting']) ) {
   $korting = $_POST['korting'];
   $bedrag = $_POST['bedrag'];
 
-  if($korting == "10") {
-    $korting = $bedrag / 100 / 109;
-    echo "Bedrag inclusief 10% korting : &euro; $korting.-";
-  }
+if ($korting == $korting) {
+  $prijs = $bedrag / 100 * $korting;
+  $echtePrijs = $bedrag - $prijs;
+  echo "Bedrag inclusief  %$korting is $echtePrijs,-";
+ }
 }
 ?>
